@@ -13,6 +13,9 @@ var resultStrings = [
     "Sorry, you lose."
 ];
 
+var winsCounter = 0;
+var lossesCounter = 0;
+
 function rdmChoice(){
     var choice = ['Stone', 'Paper', 'Scissors'];
     return choice[Math.floor(Math.random() * choice.length)];
@@ -41,42 +44,36 @@ function updateLabel(resultValue) {
     label.innerHTML = resultStrings[resultValue];
 }
 
-function getStats() {
-
-    for (var i = 0; i < 3; i++) {
-
-        if(label.innerHTML == "You win!"){
-            document.querySelector(".stats dl dd:first-of-type").innerHTML = 1;
-            // oppure... document.querySelector(".stats").getElementsByTagName("dd")[0].innerHTML= 1;
-
-        }else{
-            document.querySelector(".stats").getElementsByTagName("dd")[1].innerHTML= 1;
-        }
+function updateCounters(resultValue) {
+    switch (resultValue){
+        case 0:
+            //does nothing
+        break;
+        case 1:
+            winsCounter++;
+            document.querySelector("dl dd:first-of-type").innerHTML = winsCounter;
+        break;
+        case 2:
+           lossesCounter++;
+            document.querySelector("dl dd:last-of-type").innerHTML = lossesCounter;
+        break;
     }
-   
 }
 
-
-document.getElementById("rock").addEventListener('click', function(){
-    console.log(this);
-    console.log($(this));
-    //console.log($.innerHTML);
-    var res = getResult(this.innerHTML);
+function run(that) {
+    var self = that;
+    var res = getResult(self.innerHTML);
     updateLabel(res);
-});
+    updateCounters(res);
+}
 
-document.getElementById("paper").addEventListener('click', function(){
-     var result = getResult(this.innerHTML);
-     updateLabel(result);
-});
-
-document.getElementById("scissors").addEventListener('click',function(){ 
-     var result = getResult(this.innerHTML);
-     updateLabel(result);
-});
+document.getElementById("rock").addEventListener('click', function(){ run(this) });
+document.getElementById("paper").addEventListener('click', function(){ run(this) });
+document.getElementById("scissors").addEventListener('click',function(){ run(this) });
 
 document.getElementById("start-game").addEventListener('click', function() {
     //remove hidden class
     document.querySelector(".buttons").className = document.querySelector(".buttons").className.replace(/(?:^|\s)hidden(?!\S)/,'');
+    this.className = this.className + "hidden";
     
 });
