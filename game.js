@@ -71,9 +71,10 @@ document.getElementById("rock").addEventListener('click', function(){ run(this) 
 document.getElementById("paper").addEventListener('click', function(){ run(this) });
 document.getElementById("scissors").addEventListener('click',function(){ run(this) });
 
-document.getElementById("start-game").addEventListener('click', function() {
+/*document.getElementById("start-game").addEventListener('click', function() {
     //remove hidden class
     document.querySelector(".buttons").className = document.querySelector(".buttons").className.replace(/(?:^|\s)hidden(?!\S)/,'');
     this.className = this.className + "hidden";
     
 });
+*/

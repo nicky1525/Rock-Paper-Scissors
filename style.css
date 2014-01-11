@@ -3,16 +3,17 @@
 }
 
 .container {
-
+  margin:auto;
+   width: 960px;
 }
 
 .buttons {
 
 }
 
-.hidden {
+/*.hidden {
   visibility: hidden;
-}
+}*/
 
 .stats dl dd:first-of-type {
   
