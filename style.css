@@ -5,8 +5,8 @@ body {
 button:active, button:focus {
 	background: no-repeat bottom;
 	outline-style: none;
-    outline:none;
-    outline: 0; 
+  outline:none;
+  outline: 0; 
 }
 
 img {
@@ -21,15 +21,15 @@ dt dd {
 }
 
 #rock {
-	background: url('rock.jpg');	
+	background: url('res/rock.jpg');	
 }
 
 #paper {
-	background: url('paper.jpg');
+	background: url('res/paper.jpg');
 }
 
 #scissors {
-	background: url('scissors.jpg');
+	background: url('res/scissors.jpg');
 }
 
 #user {
@@ -75,10 +75,10 @@ dt dd {
 }
 
 .button {
-  	background-repeat: no-repeat;
-  	background-position: 50% 50%;
-  	height: 110px;
-  	width: 100px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: 110px;
+  width: 100px;
 	background-color: transparent;
 	margin-right: 10px;
 	border-radius: 10px;
