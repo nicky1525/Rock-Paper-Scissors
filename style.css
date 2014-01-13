@@ -1,20 +1,97 @@
-.wrapper {
-  width: 960px;
+body {
+	background-color: #FFFFEB;
+}
+
+button:active, button:focus {
+	background: no-repeat bottom;
+	outline-style: none;
+    outline:none;
+    outline: 0; 
+}
+
+img {
+	height: 200px;
+	width: 200px;
+
+}
+
+dt dd {
+	text-align: center;
+	
+}
+
+#rock {
+	background: url('rock.jpg');	
+}
+
+#paper {
+	background: url('paper.jpg');
+}
+
+#scissors {
+	background: url('scissors.jpg');
+}
+
+#user {
+	float: left;
+	width: 34%;
+
+}
+
+#computer {
+	float: right;
+	width: 30%;
 }
 
 .container {
   margin:auto;
-   width: 960px;
+  width: 960px;
+  background-color: #FFE8BA;
+  text-align: center;
+  padding-top: 50px;
+  border-radius: 5px;
+  padding-bottom: 50px;
+  padding:50px 50px 50px 50px;
+  font-family: "Lucida Console", Monaco, monospace;
 }
 
 .buttons {
-
+	margin-top: 50px;
 }
 
-/*.hidden {
+.hidden {
   visibility: hidden;
-}*/
+}
 
-.stats dl dd:first-of-type {
+.stats {
+	clear: both;
   
 }
+
+.game {
+	padding-top: 60px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.button {
+  	background-repeat: no-repeat;
+  	background-position: 50% 50%;
+  	height: 110px;
+  	width: 100px;
+	background-color: transparent;
+	margin-right: 10px;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #888888;
+	text-indent: -9999px;
+}
+
+.result {
+	text-align: center;
+	width: 30%;
+	float: left;
+}
+
+
+
+

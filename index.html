@@ -9,22 +9,27 @@
   <div class="container">
     <h1>Rock, Paper Or Scissors??</h1>
     <div class="buttons">
-      <button id="rock">Rock</button>
-      <button id="paper">Paper</button>
-      <button id="scissors">Scissors</button>
+      <button class="button" id="rock">Rock</button>
+      <button class="button" id="paper">Paper</button>
+      <button class="button" id="scissors">Scissors</button>
     </div>
 
-    <div class="game">
-      <h3>Your choice is</h3>
-      <h2 class="your-choice"></h2>
-
-      <h3>Your opponent's choice is</h3>
-      <h2 class="opponent-choice"></h2>
-
-      <h1 class="result"></h1>
+    <div class="game hidden">
+      <div id="user">
+        <img src="user.png">
+        <h3>Your choice is</h3>
+        <h2 class="your-choice"></h2>
+      </div>
+       <h1 class="result"></h1>
+      <div id="computer">
+        <img src="computer.png">
+        <h3>Your opponent's choice is</h3>
+        <h2 class="opponent-choice"></h2>
+      </div>
+     
     </div>
 
-    <div class="stats">
+    <div class="stats hidden">
       <dl>
         <dt>Wins:</dt>
         <dd>0</dd>

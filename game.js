@@ -41,10 +41,14 @@ function getResult(text){
 }
 
 function updateLabel(resultValue) {
+     //remove hidden class
+    document.querySelector(".game").className = document.querySelector(".game").className.replace(/(?:^|\s)hidden(?!\S)/,'');
     label.innerHTML = resultStrings[resultValue];
 }
 
 function updateCounters(resultValue) {
+     //remove hidden class
+    document.querySelector(".stats").className = document.querySelector(".stats").className.replace(/(?:^|\s)hidden(?!\S)/,'');
     switch (resultValue){
         case 0:
             //does nothing
