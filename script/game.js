@@ -1,3 +1,4 @@
+(function(){
 
 var label = document.querySelector(".result");
 
@@ -82,3 +83,5 @@ document.getElementById("scissors").addEventListener('click',function(){ run(thi
     
 });
 */
+
+})();
