@@ -3,40 +3,32 @@
 var label = document.querySelector(".result");
 
 var result = {
-    tie: 0,
-    win: 1,
-    lose:2
+    tie: "It's tie!",
+    win: "You WIN!",
+    lose:"Sorry, you lose."
 }
 
-var resultStrings = [
-    "It's tie!",
-    "You WIN!",
-    "Sorry, you lose."
-];
+var winsCounter = 0,
+    lossesCounter = 0,
+    choice = ['Rock', 'Paper', 'Scissors'];
 
-var winsCounter = 0;
-var lossesCounter = 0;
+function rdmChoice() {
 
-function rdmChoice(){
-    var choice = ['Stone', 'Paper', 'Scissors'];
     return choice[Math.floor(Math.random() * choice.length)];
 }
 
-function getResult(text){
+function getResult(text) {
     var computer = rdmChoice();
     document.querySelector(".opponent-choice").innerHTML =  computer;
     document.querySelector(".your-choice").innerHTML = text;
     if (text == computer){
         return result.tie;
-        //label.innerHTML = "Tie!";
     }else{
         if((text == 'Rock' && computer == 'Paper')||
             (text == 'Paper' && computer == 'Scissors')){
-            //label.innerHTML = "You loose!";
             return result.lose;
         }else{
             return result.win;
-            //label.innerHTML = "You win!";
         }
     }
 }
@@ -44,30 +36,29 @@ function getResult(text){
 function updateLabel(resultValue) {
      //remove hidden class
     document.querySelector(".game").className = document.querySelector(".game").className.replace(/(?:^|\s)hidden(?!\S)/,'');
-    label.innerHTML = resultStrings[resultValue];
+    label.innerHTML = resultValue;
 }
 
 function updateCounters(resultValue) {
      //remove hidden class
     document.querySelector(".stats").className = document.querySelector(".stats").className.replace(/(?:^|\s)hidden(?!\S)/,'');
     switch (resultValue){
-        case 0:
+        case result.tie:
             //does nothing
-        break;
-        case 1:
+            break;
+        case result.win:
             winsCounter++;
             document.querySelector("dl dd:first-of-type").innerHTML = winsCounter;
-        break;
-        case 2:
+            break;
+        case result.lose:
            lossesCounter++;
             document.querySelector("dl dd:last-of-type").innerHTML = lossesCounter;
-        break;
+            break;
     }
 }
 
 function run(that) {
-    var self = that;
-    var res = getResult(self.innerHTML);
+    var res = getResult(that.innerHTML);
     updateLabel(res);
     updateCounters(res);
 }
@@ -75,13 +66,5 @@ function run(that) {
 document.getElementById("rock").addEventListener('click', function(){ run(this) });
 document.getElementById("paper").addEventListener('click', function(){ run(this) });
 document.getElementById("scissors").addEventListener('click',function(){ run(this) });
-
-/*document.getElementById("start-game").addEventListener('click', function() {
-    //remove hidden class
-    document.querySelector(".buttons").className = document.querySelector(".buttons").className.replace(/(?:^|\s)hidden(?!\S)/,'');
-    this.className = this.className + "hidden";
-    
-});
-*/
 
 })();
