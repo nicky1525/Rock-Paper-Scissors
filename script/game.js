@@ -65,6 +65,6 @@ function run(that) {
 
 document.getElementById("rock").addEventListener('click', function(){ run(this) });
 document.getElementById("paper").addEventListener('click', function(){ run(this) });
-document.getElementById("scissors").addEventListener('click',function(){ run(this) });
+document.getElementById("scissors").addEventListener('click', function(){ run(this) });
 
 })();
