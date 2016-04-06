@@ -21,11 +21,12 @@ function getResult(text) {
     var computer = rdmChoice();
     document.querySelector(".opponent-choice").innerHTML =  computer;
     document.querySelector(".your-choice").innerHTML = text;
-    if (text == computer){
+    if (text === computer){
         return result.tie;
     }else{
-        if((text == 'Rock' && computer == 'Paper')||
-            (text == 'Paper' && computer == 'Scissors')){
+        if((text === 'Rock' && computer === 'Paper')||
+            (text === 'Paper' && computer === 'Scissors') ||
+             (text === 'Scissors' && computer === 'Rock')) {
             return result.lose;
         }else{
             return result.win;
